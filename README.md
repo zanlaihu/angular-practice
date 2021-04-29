@@ -34,6 +34,12 @@ ng new angular-practice
 
 <img src="pictures/init-project.png" width="200px">
 
+那这步完成之后，就可以在terminal里输入
+```
+ng serve
+```
+来启动项目了。我的习惯是喜欢先把项目启动起来，基于它的热启动机制，我可以边改边看效果，并且实时知道程序是否出了问题。
+
 # 配置路由
 
 按照项目经验，我想要将工程页面单独放到一个文件夹中，和app.component独立开来。
