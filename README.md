@@ -32,8 +32,12 @@ ng new angular-practice
 来生成了我的App。
 那么最后得到的项目长这个样子：
 
-![img](pictures/init-project.png)
+<img src="pictures/init-project.png" style="zoom:20%">
 
 # 创建页面
 
-按照现代工程经验，推荐在angular
+按照现代工程经验，推荐在src文件夹里放置其余页面。
+
+1. 新建“business”用于摆放其它页面。
+
+2. 
