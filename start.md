@@ -34,7 +34,6 @@ ng new angular-practice
 
 ![img](pictures/init-project.png)
 
-
 # 创建页面
 
 按照现代工程经验，推荐在angular
