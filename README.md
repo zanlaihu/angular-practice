@@ -34,10 +34,27 @@ ng new angular-practice
 
 <img src="pictures/init-project.png" width="200px">
 
-# 创建页面
+# 配置路由
 
-按照现代工程经验，推荐在src文件夹里放置其余页面。
+按照项目经验，我想要将工程页面单独放到一个文件夹中，和app.component独立开来。
+
+这样的好处是我可以在app.component里预加载一些方法，用于在项目启动期间一直使用。在项目进行后期，如果有需要对全部画面改动的地方，也可能可以通过只改动app.component而遍及全局。
+
+但是如果将组件放在远离app.module的地方，就需要配置路由让它可以被找到。
+
+需要如下步骤：
 
 1. 新建“business”用于摆放其它页面。
 
-2. 
+<img src="pictures/new-business.png" width="200px">
+
+# 创建页面（组件）
+
+
+
+2. 配置路由，让angular知道该如何去往其它页面：
+
+2. cd 到目的地文件夹，使用Angular Cli创建组件：
+```
+ng generate component PAGE01X01
+```
