@@ -32,7 +32,7 @@ ng new angular-practice
 来生成了我的App。
 那么最后得到的项目长这个样子：
 
-<img src="pictures/init-project.png" style="zoom:20%">
+<img src="pictures/init-project.png" style="zoom:10%">
 
 # 创建页面
 
