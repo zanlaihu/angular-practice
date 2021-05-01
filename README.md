@@ -54,13 +54,33 @@ ng serve
 ```
 映入眼帘的第一个画面就是app.component.html
 
+# 制作主页
+
+按照工业标准，不把app.component.html作为用户看到的第一个画面。虽然它作为项目的根目录，是启动后进入的第一个组件（这一般不会改变）。
+
+我们更多会把app component设置为空白画面，仅用于预加载功能，使其在全局生效。
+
+所以结构更多会采取下面的方式：
+
+<img src="pictures/first-open.png" width="400px">
+
+用户一开始进入的的确是app component，随后立刻跳转到page01。因为这个过程很短而且app component画面又是空白的，用户会感觉自己首先进入的就是page01。
+
+这样做的另一个好处是，当未来想要更换初始画面时，也不需要对app component进行修改。
+
 ## 新建工程目录
 
-根据过往项目经验，我习惯新建一个business文件夹，用于存放工程的其它组件。这样子不但可以和app组件分隔开，而且目录上也更加清晰。
+根据过往项目经验，我习惯新建一个business文件夹，用于存放工程的其它组件。使其和app组件分隔开，让目录更加清晰。
 
 1. 新建“business”用于摆放其它页面。
 
 <img src="pictures/new-business.png" width="200px">
+
+2. 然后在里面新建PAGE01X文件夹用于存放第一套连续的画面，并新建business.module.ts和PAGE01X.module.ts。
+
+<img src="pictures/add-routes.png" width="200px">
+
+为什么要添加这两个配置文件呢？他们主要是用来配置路由和声明Angular API。
 
 # Angular路由器
 
