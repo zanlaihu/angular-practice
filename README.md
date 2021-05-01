@@ -8,6 +8,7 @@ Angular由组件构成，一个组件包含：
 # Angular Cli
 
 创建组件需要Angular Cli（脚手架）。
+
 安装Angular Cli：
 ```
 npm install -g @angular/cli
@@ -19,8 +20,6 @@ ng version
 ```
 
 # 初始化项目
-
-## 使用脚手架创建新项目
 
 使用ng指令创建Angular项目。
 ```
@@ -54,15 +53,17 @@ ng serve
 ```
 映入眼帘的第一个画面就是app.component.html
 
+<div style="text-align:center"><img src="pictures/first-page.png" width="500px"></div>
+
 # 制作主页
 
 按照工业标准，不把app.component.html作为用户看到的第一个画面。虽然它作为项目的根目录，是启动后进入的第一个组件（这一般不会改变）。
 
 我们更多会把app component设置为空白画面，仅用于预加载功能，使其在全局生效。
 
-所以结构更多会采取下面的方式：
+更多会采取下面的方式：
 
-<img src="pictures/first-open.png" width="400px">
+<div style="text-align:center"><img src="pictures/first-open.png" width="500px"></div>
 
 用户一开始进入的的确是app component，随后立刻跳转到page01。因为这个过程很短而且app component画面又是空白的，用户会感觉自己首先进入的就是page01。
 
