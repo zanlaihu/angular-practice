@@ -20,29 +20,63 @@ ng version
 
 # 初始化项目
 
-自动生成一个完整的Angular App。
+## 使用脚手架创建新项目
+
+使用ng指令创建Angular项目。
 ```
 ng new my-app
 ```
 
-这里我用了
+这里，我使用如下指令
 ```
 ng new angular-practice
 ```
-来生成了我的App。
-那么最后得到的项目长这个样子：
+生成的项目会有如下结构：
 
 <img src="pictures/init-project.png" width="200px">
 
-那这步完成之后，就可以在terminal里输入
+src目录下会生成一个app组件：
+
+<img src="pictures/app-component.png" width="200px">
+
+1. app-routing.module.ts 路由
+2. app.component.css 样式
+3. app.component.html 模版
+4. app.component.spec.ts 单元测试文件
+5. app.component.ts 组件文件
+6. app.module.ts 配置文件
+
+
+
+使用ng指令启动项目：
 ```
 ng serve
 ```
-来启动项目了。我的习惯是喜欢先把项目启动起来，基于它的热启动机制，我可以边改边看效果，并且实时知道程序是否出了问题。
+映入眼帘的第一个画面就是app.component.html
 
-# 配置路由
+## 新建工程目录
 
-按照项目经验，我想要将工程页面单独放到一个文件夹中，和app.component独立开来。
+根据过往项目经验，我习惯新建一个business文件夹，用于存放工程的其它组件。这样子不但可以和app组件分隔开，而且目录上也更加清晰。
+
+1. 新建“business”用于摆放其它页面。
+
+<img src="pictures/new-business.png" width="200px">
+
+# Angular路由器
+
+Angular是一个单页面应用，通过显示或隐藏特定组件的显示部分来改变用户能看到的内容。这个项目里，这个单一画面是angular-practice/src/index.html。
+
+所以，画面之间的跳转，实质上是index页面内组件的替换。
+
+为了处理从一个画面到另一个画面的导航，需要使用Angular的Router（路由器）。路由器会把浏览器URL解释成改变视图的操作指南，以完成导航。
+
+这样子，我在business目录下放置的组件才可以被正确地找到。
+
+## 配置路由
+
+这里有一个tricky的地方。
+
+
 
 这样的好处是我可以在app.component里预加载一些方法，用于在项目启动期间一直使用。在项目进行后期，如果有需要对全部画面改动的地方，也可能可以通过只改动app.component而遍及全局。
 
@@ -50,15 +84,10 @@ ng serve
 
 需要如下步骤：
 
-1. 新建“business”用于摆放其它页面。
 
-<img src="pictures/new-business.png" width="200px">
 
 # 创建页面（组件）
 
-
-
-2. 配置路由，让angular知道该如何去往其它页面：
 
 2. cd 到目的地文件夹，使用Angular Cli创建组件：
 ```
