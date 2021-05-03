@@ -69,7 +69,18 @@ ng serve
 
 >这样做另一个好处是，当未来想要更换初始画面时，不需要对app component再进行修改。
 
-## 新建工程目录
+# 新建主页
+
+使用ng指令新建组件：
+```
+ng generate component index
+```
+
+把app.component.html中的内容全部拷到index.component.html。
+
+但是留下\<router-outlet>\</router-outlet>。这个在后面会说明。
+
+<!-- ## 新建工程目录
 
 新建business文件夹用于存放工程的其它组件。使其和app组件分隔开，让目录更加清晰。
 
@@ -81,7 +92,7 @@ ng serve
 
 <img src="pictures/add-routes.png" width="200px">
 
-这两个配置文件用来配置路由和声明Angular API。
+这两个配置文件用来配置路由和声明Angular API。 -->
 
 # Angular路由器
 
@@ -89,15 +100,38 @@ Angular是单页面应用，通过显示或隐藏特定组件的显示部分来�
 
 这个项目里，这个单一画面是angular-practice/src/index.html。
 
+因为index.html内的内容会一直显示，所以把它清空，只留下\<router-outlet>\</router-outlet>标签。
+
+
+
 为了处理从一个画面到另一个画面的导航，需要使用Angular的Router（路由器）。路由器会把浏览器URL解释成改变视图的操作指南，以完成导航。
 
-如此这般，business目录下的组件才能被接入。
+如此这般，组件才能被接入。
 
 ## 配置路由
 
-1. 
+使用ng指令生成的组件会被自动添加到app.module.ts
+```typescript
+@NgModule({
+  declarations: [AppComponent, IndexComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+不过还需要在app-routing.module.ts的routes里添加路径：
+```typescript
+const routes: Routes = [
+  { path: 'index', component: IndexComponent },
+];
 
-
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+```
 
 # 创建页面（组件）
 

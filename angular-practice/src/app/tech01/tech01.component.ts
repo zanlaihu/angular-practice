@@ -16,8 +16,6 @@ export class Tech01Component implements OnInit {
   ngOnInit(): void {
   }
 
-  public goToTech(): void {
-    this.router.navigate(['/index']);
-  }
+
 
 }
