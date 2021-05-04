@@ -163,3 +163,6 @@ ng add ng-zorro-antd
 
 <img src="pictures/add-antd.png" width="200px">
 
+这时切到terminal，发现报错了：
+
+<img src="pictures/zorro-error.png" width="500px">
