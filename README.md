@@ -159,3 +159,7 @@ Ant design为Angular提供的最后更新是2021-01-18:
 ng add ng-zorro-antd
 ```
 
+下面的配置文件会被自动修改：
+
+<img src="pictures/add-antd.png" width="200px">
+
