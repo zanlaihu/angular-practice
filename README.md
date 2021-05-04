@@ -23,11 +23,6 @@ ng version
 
 使用ng指令创建Angular项目。
 ```
-ng new my-app
-```
-
-这里，我使用如下指令
-```
 ng new angular-practice
 ```
 生成的项目会有如下结构：
@@ -71,14 +66,14 @@ ng serve
 
 ## 新建index
 
-使用ng指令新建组件：
+新建组件：
 ```
 ng generate component index
 ```
 
-把app.component.html中的内容全部拷到index.component.html。
+把app.component.html中的HTML全部拷到index.component.html，style内容全部拷到app.component.css。
 
-但是留下\<router-outlet>\</router-outlet>。这个在后面会说明。
+只留下\<router-outlet>\</router-outlet>标签。
 
 <!-- ## 新建工程目录
 
@@ -94,23 +89,18 @@ ng generate component index
 
 这两个配置文件用来配置路由和声明Angular API。 -->
 
-# Angular路由器
+# 单页面应用的页面跳转
 
-Angular是单页面应用，通过显示或隐藏特定组件的显示部分来改变用户能看到的内容。画面之间的跳转，实质上是HTML页面内标签的替换。
+Angular是单页面应用，通过显示或隐藏特定组件的显示部分来改变用户能看到的内容。画面之间的跳转，实质上是HTML页面内标签的替换。为了处理从一个画面到另一个画面的导航，需要使用Angular的Router（路由器）。路由器会把浏览器URL解释成改变视图的操作指南，以完成导航。
 
-这个项目里，这个单一画面是angular-practice/src/index.html。
+在这个项目中，这个单一画面是angular-practice/src/index.html。
 
-因为index.html内的内容会一直显示，所以把它清空，只留下\<router-outlet>\</router-outlet>标签。
+index.html内的内容会一直显示，但我们可以将它设置成空白，只留下\<router-outlet>\</router-outlet>标签。这个标签是为了引入路由导向的画面。它的结构是这样：
 
 
+# 配置路由
 
-为了处理从一个画面到另一个画面的导航，需要使用Angular的Router（路由器）。路由器会把浏览器URL解释成改变视图的操作指南，以完成导航。
-
-如此这般，组件才能被接入。
-
-## 配置路由
-
-使用ng指令生成的组件会被自动添加到app.module.ts
+使用ng生成的组件会被自动添加到app.module.ts
 ```typescript
 @NgModule({
   declarations: [AppComponent, IndexComponent],
@@ -133,10 +123,39 @@ const routes: Routes = [
 export class AppRoutingModule {}
 ```
 
-# 创建页面（组件）
+# 修改主页
 
+有了第一个主页，就可以对里面的内容进行修改了。
 
-2. cd 到目的地文件夹，使用Angular Cli创建组件：
+<div style="text-align:center"><img src="pictures/first-page.png" width="500px"></div>
+
+这是Angular默认生成的页面，采用了响应式布局。如果为了节省时间，可以直接拿过来使用。
+
+但是这里我想尝试一下最近很火的前端框架。
+
+# 选择前端CSS框架
+
+目前很火的框架有两个：element ui和ant design。（不知道为什么近些年bootstrap渐渐不火了）
+
+element ui为Angular提供的最后更新是2018-02-23：
+
+<img src="pictures/element-ui.png" width="200px">
+
+Ant design为Angular提供的最后更新是2021-01-18:
+
+<img src="pictures/ng-zorro.png" width="200px">
+
+所以我选择了Ant design为Angular提供的CSS库：NG-ZORRO
+
+>ng-zorro-antd 是遵循 Ant Design 设计规范的 Angular UI 组件库，主要用于研发企业级中后台产品。全部代码开源并遵循 MIT 协议，任何企业、组织及个人均可免费使用。
+
+## 安装NG ZORRO
+
+为了防止翻车，我切了一个单独的git分支：antd。
+
+引入ng zorro包
+
 ```
-ng generate component PAGE01X01
+ng add ng-zorro-antd
 ```
+
