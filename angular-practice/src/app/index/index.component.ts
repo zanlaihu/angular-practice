@@ -14,4 +14,8 @@ export class IndexComponent implements OnInit {
   public goToTech(): void {
     this.router.navigate(['/index']);
   }
+
+  public goToArt(): void {
+    this.router.navigate([]);
+  }
 }

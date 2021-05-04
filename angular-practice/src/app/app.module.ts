@@ -12,12 +12,23 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { Art01Component } from './art01/art01.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, Tech01Component, IndexComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
+  declarations: [AppComponent, Tech01Component, IndexComponent, Art01Component],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NzGridModule,
+    NzLayoutModule,
+  ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
