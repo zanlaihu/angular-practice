@@ -75,6 +75,8 @@ ng generate component index
 
 只留下\<router-outlet>\</router-outlet>标签。
 
+>路由出口：RouterOutlet 是一个来自路由器库的指令，虽然它的用法像组件一样。它充当占位符，用于在模板中标记出路由器应该显示把该组件显示在那个出口的位置。
+
 <!-- ## 新建工程目录
 
 新建business文件夹用于存放工程的其它组件。使其和app组件分隔开，让目录更加清晰。
@@ -95,7 +97,7 @@ Angular是单页面应用，通过显示或隐藏特定组件的显示部分来�
 
 在这个项目中，这个单一画面是angular-practice/src/index.html。
 
-index.html内的内容会一直显示，但我们可以将它设置成空白，只留下\<router-outlet>\</router-outlet>标签。这个标签是为了引入路由导向的画面。它的结构是这样：
+index.html内的内容会一直显示，但我们可以将它设置成空白，只留下\<router-outlet>\</router-outlet>标签。这个标签会通知 Angular，将所选路由的组件更新到视图这个标签。
 
 
 # 配置路由
@@ -166,3 +168,31 @@ ng add ng-zorro-antd
 这时切到terminal，发现报错了：
 
 <img src="pictures/zorro-error.png" width="500px">
+
+这是因为HttpClientModule和BrowserAnimationsModule两个模块缺失。
+
+control+C停止项目，npm install一下再ng serve。
+
+现在没有问题了。启动项目，发现我的主页被替换成了下面这个：
+
+<img src="pictures/zorro-index.png" width="500px">
+
+就你可以发现ng zorro很坏很坏的，替换了主页也不跟你说一声。检查一下app.component.html，发现：
+
+<img src="pictures/change-appthml.png" width="500px">
+
+router-outlet都被替换了，那画面自然是显示不出来的。先让这份文件回退，然后我们来看看ng zorro要怎么使用：
+
+国际化一章说明了日期的设定，并建议使用date-fns并且移除掉对Angular Locales包的依赖（删除下方代码）来减小打包体积。（这个可以在项目结束后再考虑）
+
+服务端渲染是一种SSR技术。标准的 Angular 应用会运行在浏览器中，它会在 DOM 中渲染页面，以响应用户的操作。 而Angular Universal 会在服务端运行，生成一些静态的应用页面，稍后再通过客户端进行启动。 这意味着该应用的渲染通常会更快，让用户可以在应用变得完全可交互之前，先查看应用的布局。
+
+都先不管，
+
+# 以上内容截止至2020年5月4日
+
+
+
+
+
+
