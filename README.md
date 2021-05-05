@@ -178,8 +178,8 @@ control+C停止项目，npm install一下再ng serve。
 <img src="pictures/zorro-index.png" width="500px">
 
 就你可以发现ng zorro很坏很坏的，替换了主页也不跟你说一声。检查一下app.component.html，发现：
+<img src="pictures/change-apphtml.png" width="500px">
 
-<img src="pictures/change-appthml.png" width="500px">
 
 router-outlet都被替换了，那画面自然是显示不出来的。先让这份文件回退，然后我们来看看ng zorro要怎么使用：
 
