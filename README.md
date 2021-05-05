@@ -135,8 +135,3 @@ export class AppRoutingModule {}
 
 # 创建页面（组件）
 
-
-2. cd 到目的地文件夹，使用Angular Cli创建组件：
-```
-ng generate component PAGE01X01
-```
