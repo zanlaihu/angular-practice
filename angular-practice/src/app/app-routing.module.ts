@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { Tech01Component } from './tech01/tech01.component';
 
 const routes: Routes = [
-  { path: 'tech01', component: Tech01Component },
-  { path: 'index', component: IndexComponent },
+  // 打开项目后自动进入welcome
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
