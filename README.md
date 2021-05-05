@@ -1,9 +1,4 @@
-# Angular
-
-Angular由组件构成，一个组件包含：
-1. 一个HTML模版
-2. 一个Typescript类
-3. 一个CSS样式（可选）
+# 过程记录
 
 # Angular Cli
 
@@ -203,7 +198,7 @@ router-outlet都被替换了，那画面自然是显示不出来的。
 
 <img src="pictures/zorro-theme.png" width="500px">
 
-# 这次的主题引来都带来了什么？
+# 这次的主题引入都改变了什么？
 
 ## 
 
