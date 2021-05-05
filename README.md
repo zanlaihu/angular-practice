@@ -201,7 +201,11 @@ router-outlet都被替换了，那画面自然是显示不出来的。
 
 最后就可以显示出这个画面了：
 
+<img src="pictures/zorro-theme.png" width="500px">
 
+# 这次的主题引来都带来了什么？
+
+## 
 
 
 
