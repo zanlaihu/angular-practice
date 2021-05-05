@@ -141,11 +141,11 @@ export class AppRoutingModule {}
 
 element ui为Angular提供的最后更新是2018-02-23：
 
-<img src="pictures/element-ui.png" width="200px">
+<img src="pictures/element-ui.png" width="500px">
 
 Ant design为Angular提供的最后更新是2021-01-18:
 
-<img src="pictures/ng-zorro.png" width="200px">
+<img src="pictures/ng-zorro.png" width="500px">
 
 所以我选择了Ant design为Angular提供的CSS库：NG-ZORRO
 
